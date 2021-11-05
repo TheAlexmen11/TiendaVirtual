@@ -15,7 +15,7 @@
     
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="#"><img src="static/img/logo/logo-dino.png" alt="logo">
       <strong>C&H STORE</strong>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">USUARIO</a></li>
             <li><a class="dropdown-item" href="#">PRODUCTOS</a></li>
-          </ul>
+          </ul> 
         </li>
       </ul>
     <button class="btn btn-outline-success" type="submit">CARRITO</button>
@@ -58,8 +58,31 @@
 
 
   <main>
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="container" style="border: 3px solid red;">
+    <!-- TITULO -->
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light text-center">CATALOGO DE PRODUCTOS</h1>
+      </div>
+    </div>
+    <!-- =================== CONTENIDO PRODUCTOS =================== -->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+        <!-- bucle -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <h5 class="card-text">Laptop lenovo ideapad 5</h5>
+              <p class="card-text">s/.2800</p>
+              <div class="d-flex justify-content-between align-items-center">
+                  <button type="button" class="btn btn-sm btn-outline-primary">Detalles</button>
+                  <button type="button" class="btn btn-sm btn-outline-success">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- bucle cierre -->
+    <!-- ============================================================ -->
         <div class="col">
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
@@ -101,6 +124,22 @@
             </div>
           </div>
         </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="card-body">
+              <h5 class="card-text">Laptop lenovo ideapad 5</h5>
+              <p class="card-text">s/.2800</p>
+              <div class="d-flex justify-content-between align-items-center">
+                  <button type="button" class="btn btn-sm btn-outline-primary">Detalles</button>
+                  <button type="button" class="btn btn-sm btn-outline-success">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </div>
   </main>
