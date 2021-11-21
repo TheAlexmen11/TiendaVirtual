@@ -1,3 +1,16 @@
+<?php require_once('./connection/conexionbd.php');?>
+<?php
+
+$query_Recordset1 = sprintf("SELECT * FROM productos;");
+$Recordset1 = $cnx->query($query_Recordset1) or die(msj("[ERROR]","En SQL lista $query_Recordset1"));
+
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +22,8 @@
     rel="stylesheet" 
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
     crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="static/css/estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 </head>
 <body>
     
@@ -54,8 +68,7 @@
       </div>
     </div>
   </section>
-
-
+<br>
 
   <main>
     <div class="container" style="border: 3px solid red;">
@@ -66,82 +79,113 @@
       </div>
     </div>
     <!-- =================== CONTENIDO PRODUCTOS =================== -->
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+      
+    
+    
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
         <!-- bucle -->
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <h5 class="card-text">Laptop lenovo ideapad 5</h5>
-              <p class="card-text">s/.2800</p>
-              <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-outline-primary">Detalles</button>
-                  <button type="button" class="btn btn-sm btn-outline-success">Agregar</button>
+        <?php
+        while ($row = $Recordset1->fetch_assoc()) {  //fetch_assoc Nombre de campo
+        echo("<div class='col'>
+            <div class='card shadow-sm'>
+              
+              <img class='card-img-top' src='static/img/laptops/".$row["imagen"]."' alt='laptop'>
+             
+              <div class='card-body'>
+                <h5 class='card-text'>".$row["marca"]."</h5>
+                <p class='card-text'>".$row["descripcion"]."</p>
+                <h5 class='card-text'>S/.".$row["precio_f"]."</h5>
+                <div class='d-flex justify-content-between align-items-center'>
+                    <button type='button' class='btn btn-sm btn-outline-primary' >Detalles</button>
+                    <button type='button' class='btn btn-sm btn-outline-success'>Agregar</button>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </div>");
+        }
+        ?>
         <!-- bucle cierre -->
     <!-- ============================================================ -->
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <h5 class="card-text">Laptop lenovo ideapad 5</h5>
-              <p class="card-text">s/.2800</p>
-              <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-outline-primary">Detalles</button>
-                  <button type="button" class="btn btn-sm btn-outline-success">Agregar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <h5 class="card-text">Laptop lenovo ideapad 5</h5>
-              <p class="card-text">s/.2800</p>
-              <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-outline-primary">Detalles</button>
-                  <button type="button" class="btn btn-sm btn-outline-success">Agregar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <h5 class="card-text">Laptop lenovo ideapad 5</h5>
-              <p class="card-text">s/.2800</p>
-              <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-outline-primary">Detalles</button>
-                  <button type="button" class="btn btn-sm btn-outline-success">Agregar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <h5 class="card-text">Laptop lenovo ideapad 5</h5>
-              <p class="card-text">s/.2800</p>
-              <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-outline-primary">Detalles</button>
-                  <button type="button" class="btn btn-sm btn-outline-success">Agregar</button>
-              </div>
-            </div>
-          </div>
-        </div>
 
 
       </div>
     </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 order-md-1">
+          <img src="static/img/laptops/imagen.png" alt="visulizador">
+        </div>
+        <div class="col-md-6 order-md-2">
+          <div class="row">
+
+            <div class="col">
+                <h5>Marca</h5>
+                <h5>Modelo</h5>
+                <h5>procesador</h5>
+                <h5>Memoria RAM</h5>
+                <h5>Almacenamiento</h5>
+                <h5>T. Video</h5>
+                <h5>Pantalla</h5>
+                <h5>Teclado</h5>
+                <h5>S.O</h5>
+          </div>
+          <div class="col" style="color:#6F6F6F">
+                <h5>:ACER</h5>
+                <h5>:ASPIRE 1</h5>
+                <h5>:N4500U</h5>
+                <h5>:8GB</h5>
+                <h5>:HDD+SSD</h5>
+                <h5>:INTEGRADA</h5>
+                <h5>:15.6"</h5>
+                <h5>:Ingles</h5>
+                <h5>:Windows</h5>
+          </div>
+        </div>
+        <br>
+          <div class="d-grid gap-3 col-10 mx-auto">
+            <button class="btn btn-primary" type="button">Comprar ahora</button>
+            <button class="btn btn-outline-primary" type="button">Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br>
+    <footer class="footer-cat bg-dark">
+      <div class="container">
+            <div class="row pt-5">
+          <div class="col flex-none">
+            <i class="bi bi-facebook" style="font-size: 2rem; color: cornflowerblue; margin-right:1rem;"></i>
+            <i class="bi bi-twitter" style="font-size: 2rem; color: cornflowerblue; margin-right:1rem;"></i>
+            <i class="bi bi-youtube" style="font-size: 2rem; color: cornflowerblue; margin-right:1rem;"></i>
+            <p>Servicio al Cliente</p>
+            <p>(+51)9712 662 516</p>
+            <p>Tienda - C.C. Compuplaza
+              Calle Octavio Muños Najar
+              Int 103 - 107 - 111 - 121
+            </p>
+          </div>
+          <div class="col" style="text-align: center;">
+            <i class="bi bi-shield-lock-fill" style="font-size: 2rem; color: cornflowerblue; margin-right:1rem;"></i>
+            <i class="bi bi-question-circle-fill" style="font-size: 2rem; color: cornflowerblue; margin-right:1rem;"></i>
+            <i class="bi bi-info-circle-fill" style="font-size: 2rem; color: cornflowerblue; margin-right:1rem;"></i>
+            <p>Preguntas más Frecuentes</p>
+            <p>Envíos & Devoluciones</p>
+            <p>Polìtica de la Tienda</p>
+          </div>
+          <div class="col" style="text-align: end;">
+            <i class="bi bi-laptop" style="font-size: 2rem; color: cornflowerblue; margin-right:1rem;"></i>
+            <i class="bi bi-pc-display" style="font-size: 2rem; color: cornflowerblue; margin-right:1rem;"></i>
+            <i class="bi bi-arrow-down-left-circle-fill" style="font-size: 2rem; color: cornflowerblue; margin-right:1rem;"></i>
+            <p>Laptops y Notebook</p>
+            <p>Computadoras , All in One</p>
+            <p>Nosotros</p>
+          </div>
+
+        </div>
+      </div>
+    <p>&copy; 2021–2021 Company, Inc.</p>
+  </footer>
   </main>
 
 

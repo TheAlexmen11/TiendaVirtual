@@ -1,6 +1,6 @@
 <?php
     //Paso 1. Conexion BD
-    $cnx = @mysqli_connect('localhost','root','','bdferreteria');
+    $cnx = @mysqli_connect('localhost','root','','dbtienda');
 
     if (!$cnx) {
         die(msj("[ERROR EN CONEXIÓN]", "Revisar los valores del parametro de conexión"));
