@@ -1,8 +1,8 @@
-var READY_STATE_UNINITIALIZED=0;	//No se a inicializado
-var READY_STATE_LOADING=1;			//Cargando
-var READY_STATE_LOADED=2;			//Cargado
-var READY_STATE_INTERACTIVE=3;		//Interactivo
-var READY_STATE_COMPLETE=4;			//Completo
+let READY_STATE_UNINITIALIZED=0;	//No se a inicializado
+let READY_STATE_LOADING=1;			//Cargando
+let READY_STATE_LOADED=2;			//Cargado
+let READY_STATE_INTERACTIVE=3;		//Interactivo
+let READY_STATE_COMPLETE=4;			//Completo
 
 var objXHR;
 ///////////////////////////////////////////////////////////////////
